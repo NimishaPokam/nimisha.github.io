@@ -1,26 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Education &amp; Experience on Nimisha Pokam</title>
-    <link>//localhost:1313/career/</link>
-    <description>Recent content in Education &amp; Experience on Nimisha Pokam</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/career/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Education</title>
-      <link>//localhost:1313/career/education/</link>
-      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/career/education/</guid>
-      <description>&lt;h3 id=&#34;depaul-university-chicago-illinois&#34;&gt;DePaul University; Chicago Illinois&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Master of Science in Information Systems&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Expected Graduation: March 2026&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Honors&lt;/strong&gt;: Graduate Presidential Scholarship&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Relevant Coursework&lt;/strong&gt;: Database Design, Database Programming, Data Warehousing, Python Programming, Data Visualization&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GPA&lt;/strong&gt;: 3.95/4.0&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;mumbai-university-mumbai-india&#34;&gt;Mumbai University; Mumbai, India&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Bachelor of Economics&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Graduated: October 2020&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Professional Experience</title>
-      <link>//localhost:1313/career/experience/</link>
-      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/career/experience/</guid>
-      <description>&lt;h3 id=&#34;seo-analyst&#34;&gt;SEO Analyst&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Zedex Info Pvt Ltd&lt;/strong&gt; | &lt;em&gt;January 2023 - December 2023&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;business-analyst&#34;&gt;Business Analyst&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;MyHobbyCourses&lt;/strong&gt; | &lt;em&gt;December 2021 - December 2022&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Education &amp; Experience on Nimisha Pokam</title><link>https://nimisha.github.io/career/</link><description>Recent content in Education &amp; Experience on Nimisha Pokam</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 21 Mar 2025 19:16:50 -0500</lastBuildDate><atom:link href="https://nimisha.github.io/career/index.xml" rel="self" type="application/rss+xml"/><item><title>Education</title><link>https://nimisha.github.io/career/education/</link><pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate><guid>https://nimisha.github.io/career/education/</guid><description>&lt;h3 id="depaul-university-chicago-illinois">DePaul University; Chicago Illinois&lt;/h3>
+&lt;p>&lt;strong>Master of Science in Information Systems&lt;/strong>&lt;br>
+&lt;em>Expected Graduation: March 2026&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Honors&lt;/strong>: Graduate Presidential Scholarship&lt;/li>
+&lt;li>&lt;strong>Relevant Coursework&lt;/strong>: Database Design, Database Programming, Data Warehousing, Python Programming, Data Visualization&lt;/li>
+&lt;li>&lt;strong>GPA&lt;/strong>: 3.95/4.0&lt;/li>
+&lt;/ul>
+&lt;h3 id="mumbai-university-mumbai-india">Mumbai University; Mumbai, India&lt;/h3>
+&lt;p>&lt;strong>Bachelor of Economics&lt;/strong>&lt;br>
+&lt;em>Graduated: October 2020&lt;/em>&lt;/p></description></item><item><title>Professional Experience</title><link>https://nimisha.github.io/career/experience/</link><pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate><guid>https://nimisha.github.io/career/experience/</guid><description>&lt;h3 id="seo-analyst">SEO Analyst&lt;/h3>
+&lt;p>&lt;strong>Zedex Info Pvt Ltd&lt;/strong> | &lt;em>January 2023 - December 2023&lt;/em>&lt;/p>
+&lt;h3 id="business-analyst">Business Analyst&lt;/h3>
+&lt;p>&lt;strong>MyHobbyCourses&lt;/strong> | &lt;em>December 2021 - December 2022&lt;/em>&lt;/p></description></item></channel></rss>
