@@ -1,11 +1,12 @@
 [build]
 publish = "public"
-command = "npm i -g postcss-cli && npm run build"
+command = "hugo --gc --minify"
 
 [build.environment]
 HUGO_VERSION = "0.121.1"
 NODE_VERSION = "20.11.1"
-NPM_VERSION = "10.2.4"
+GO_VERSION = "1.21.6"
 
 [context.production.environment]
 HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
