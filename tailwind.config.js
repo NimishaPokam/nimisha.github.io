@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./content/**/*.{html,md}",
-    "./layouts/**/*.html",
+    "./content/**/*.{html,md,markdown}",
+    "./layouts/**/*.{html,partial}",
+    "./static/**/*.{html,js}",
+    "./themes/digitalgarden/layouts/**/*.{html,partial}",
+    "./themes/digitalgarden/content/**/*.{html,md,markdown}",
+    "./themes/digitalgarden/static/**/*.{html,js}",
     "./themes/digitalgarden/layouts/**/*.html",
-    "./themes/digitalgarden/content/**/*.{html,md}"
+    "./themes/digitalgarden/assets/js/*.js"
   ],
   darkMode: 'class',
   theme: {
