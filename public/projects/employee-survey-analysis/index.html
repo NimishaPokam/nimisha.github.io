@@ -1,194 +1,468 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/favicon.ico><title>Employee Survey Analysis - Nimisha Pokam
-</title><meta name=description content="Analysis of employee engagement survey data using SQL and Tableau."><meta name=generator content="Hugo 0.145.0"><link rel=stylesheet href=https://nimisha.github.io/css/main.css><meta property="og:url" content="https://nimisha.github.io/projects/employee-survey-analysis/"><meta property="og:site_name" content="Nimisha Pokam"><meta property="og:title" content="Employee Survey Analysis"><meta property="og:description" content="Analysis of employee engagement survey data using SQL and Tableau."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="projects"><meta property="article:published_time" content="2025-03-14T00:00:00+00:00"><meta property="article:modified_time" content="2025-03-21T19:16:50-05:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Employee Survey Analysis"><meta name=twitter:description content="Analysis of employee engagement survey data using SQL and Tableau."><meta itemprop=name content="Employee Survey Analysis"><meta itemprop=description content="Analysis of employee engagement survey data using SQL and Tableau."><meta itemprop=datePublished content="2025-03-14T00:00:00+00:00"><meta itemprop=dateModified content="2025-03-21T19:16:50-05:00"><meta itemprop=wordCount content="2104"><meta itemprop=name content="Employee Survey Analysis"><meta itemprop=description content="Analysis of employee engagement survey data using SQL and Tableau."><meta itemprop=datePublished content="2025-03-14T00:00:00+00:00"><meta itemprop=dateModified content="2025-03-21T19:16:50-05:00"><meta itemprop=wordCount content="2104"></head><body class="flex relative h-full min-h-screen"><aside class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:basis-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar flex-shrink-0"><p class="font-bold mb-5 flex items-center gap-2"><button aria-label="Close sidebar" class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700">
-<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentcolor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/></svg>
-</button>
-<a href=https://nimisha.github.io/ class=px-2><span>Nimisha Pokam</span>
-</a><button aria-label="Toggle dark mode" class="dark-mode-toggle p-2 rounded border dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 ml-auto"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentcolor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728.0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg></button></p><ul class="list-none flex flex-col gap-1"><li><a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between hover:bg-slate-200 dark:hover:bg-slate-700" href=/><span>About Me</span></a></li><li><a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between hover:bg-slate-200 dark:hover:bg-slate-700" href=/career><span>Education & Experience</span></a></li><li><a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between hover:bg-slate-200 dark:hover:bg-slate-700" href=/projects><span>Projects</span></a></li><li><a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between hover:bg-slate-200 dark:hover:bg-slate-700" href=/stack><span>Tech Stack</span></a></li></ul><div class=flex-1></div><ul class="list-none flex flex-wrap justify-center gap-1 pt-2 border-t border-slate-200 dark:border-slate-600"><li><a href=https://github.com/NimishaPokam target=_blank rel="noopener noreferrer" class="px-2 py-1.5 rounded-md text-sm block hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></a></li><li><a href=https://www.linkedin.com/in/nimisha-p-b1b9922a9/ target=_blank rel="noopener noreferrer" class="px-2 py-1.5 rounded-md text-sm block hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></li><li><a href=mailto:pnimisha@depaul.edu class="px-2 py-1.5 rounded-md text-sm block hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg></a></li><li><a href=https://www.instagram.com/momwantsyouhomebydinner target=_blank rel="noopener noreferrer" class="px-2 py-1.5 rounded-md text-sm block hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></li></ul></aside><div class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay"></div><button aria-label="Toggle Sidebar" class="md:hidden absolute top-3 left-3 z-10 menu-trigger p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-100"><svg class="h-6 w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="16" y2="18"/></svg></button><div class="flex flex-1 h-screen relative w-full min-w-0"><section class="w-full h-full md:min-w-[400px] md:w-1/4 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col py-3 overflow-y-auto scroll-area flex-shrink-0"><a href=https://nimisha.github.io/projects/><h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">Projects</h2></a><div class=space-y-2.5><a class="article block px-3 py-4 hover:bg-slate-200 dark:hover:bg-slate-700" href=/projects/digitalisation-impact-on-economic-growth/><h3 class="text-lg font-semibold mb-0.5">Digitalisation Impact on Economic Growth</h3><div class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">Exploring the relationship between digitalization and economic growth using Python libraries for data analysis and visualization.</div></a><a class="article block px-3 py-4 bg-slate-900 dark:bg-slate-700 text-slate-50" href=/projects/employee-survey-analysis/><h3 class="text-lg font-semibold mb-0.5">Employee Survey Analysis</h3><div class="text-sm text-slate-400 line-clamp-2">Analysis of employee engagement survey data using SQL and Tableau.</div></a></div></section><article class="overflow-y-auto h-screen w-full"><div class="px-6 py-20 w-full lg:w-[880px] mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto"><h1 class=!mb-2>Employee Survey Analysis</h1><p class="text-sm text-slate-500 !mb-8">March 14, 2025</p><h2 id=overview>Overview</h2><p>This project involves a deep dive into an employee survey dataset from Kaggle, using SQL and Tableau to uncover actionable insights related to work-life balance, stress levels, workload, and sleep habits across various departments and job levels. The goal was to analyze key trends and patterns in the dataset and present them in a visually compelling way.</p><h2 id=tools--technologies-used>Tools & Technologies Used</h2><ul><li><strong>Draw.io</strong>: Used to create the relational schema for the database.</li><li><strong>SQL</strong>: Core tool for data extraction and analysis.</li><li><strong>Tableau</strong>: Supplementary tool for visualization.</li><li><strong>GitHub</strong>: Version control and collaboration platform.</li></ul><h2 id=process-overview>Process Overview</h2><h3 id=step-1-dataset-selection-and-schema-design>Step 1: Dataset Selection and Schema Design</h3><p>The project began with the selection of a dataset sourced from <a href=https://www.kaggle.com/datasets/lainguyn123/employee-survey/data target=_blank rel=noopener>Kaggle</a>, which contained responses from an employee survey. This dataset provided information on various aspects of employee work-life balance, stress levels, workload, and sleep habits.</p><p>To ensure a clear and efficient database structure, I used <a href=https://www.drawio.com/ target=_blank rel=noopener><strong>Draw.io</strong></a> to create a relational schema. This diagram helped identify the relationships between key entities, such as employee details, job levels, departments, and survey responses.</p><p><img src=/images/projects/relational_schema.drawio.png alt="Relational Schema"></p><h3 id=step-2-database-creation-and-data-preparation>Step 2: Database Creation and Data Preparation</h3><p>After finalizing the schema design, I proceeded to create the tables in <strong>Oracle SQL</strong>. This involved defining the structure of each table, including the necessary fields and their data types. Constraints were applied to ensure data integrity, such as primary keys for unique identification and foreign keys to establish relationships between tables.</p><p>Once the tables were created, I <a href=https://github.com/NimishaPokam/employee-survey/blob/main/Insert_Queries/Employee_Survey-%20INSERT%20QUERIES.sql target=_blank rel=noopener><strong>inserted 20,000 rows of data</strong></a> into the database. This step was crucial for ensuring the dataset was robust and ready for analysis.</p><p>Here’s the SQL code used to create the tables:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#75715e>-- Create JobLevel Table
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> JobLevel (
-</span></span><span style=display:flex><span>    JobLevelID NUMBER <span style=color:#66d9ef>GENERATED</span> ALWAYS <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>IDENTITY</span> <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
-</span></span><span style=display:flex><span>    JobLevelType NVARCHAR2(<span style=color:#ae81ff>15</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>
-</span></span><span style=display:flex><span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- Create Department Table
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> Department (
-</span></span><span style=display:flex><span>    DeptID NUMBER <span style=color:#66d9ef>GENERATED</span> ALWAYS <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>IDENTITY</span> <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
-</span></span><span style=display:flex><span>    DeptName NVARCHAR2(<span style=color:#ae81ff>25</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>
-</span></span><span style=display:flex><span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- Create EmpType Table
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> EmpType (
-</span></span><span style=display:flex><span>    EmpTypeID NUMBER <span style=color:#66d9ef>GENERATED</span> ALWAYS <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>IDENTITY</span> <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
-</span></span><span style=display:flex><span>    EmpTypeName NVARCHAR2(<span style=color:#ae81ff>20</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>
-</span></span><span style=display:flex><span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- Create EduLevel Table
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> EduLevel (
-</span></span><span style=display:flex><span>    EduLevelID NUMBER <span style=color:#66d9ef>GENERATED</span> ALWAYS <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>IDENTITY</span> <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
-</span></span><span style=display:flex><span>    EduLevelName NVARCHAR2(<span style=color:#ae81ff>20</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>
-</span></span><span style=display:flex><span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- Create Commute Table
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> Commute (
-</span></span><span style=display:flex><span>    CommuteID NUMBER <span style=color:#66d9ef>GENERATED</span> ALWAYS <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>IDENTITY</span> <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
-</span></span><span style=display:flex><span>    CommuteMode NVARCHAR2(<span style=color:#ae81ff>20</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    CommuteDistance NUMBER(<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>
-</span></span><span style=display:flex><span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- Create EmployeeSurvey Table
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> EmployeeSurvey (
-</span></span><span style=display:flex><span>    EmployeeSurveyID NUMBER <span style=color:#66d9ef>GENERATED</span> ALWAYS <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>IDENTITY</span> <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
-</span></span><span style=display:flex><span>    WLB NUMBER(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    WorkEnv NUMBER(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    WorkLoad NUMBER(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    Stress NUMBER(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    JobSatisfaction NUMBER(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    PhysicalActivities NUMBER(<span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    SleepHours NUMBER(<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>
-</span></span><span style=display:flex><span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- Create EmployeeDetails Table
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> EmployeeDetails (
-</span></span><span style=display:flex><span>    EmpID NUMBER <span style=color:#66d9ef>GENERATED</span> ALWAYS <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>IDENTITY</span> <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
-</span></span><span style=display:flex><span>    Gender VARCHAR2(<span style=color:#ae81ff>6</span>) <span style=color:#66d9ef>CHECK</span> (Gender <span style=color:#66d9ef>IN</span> (<span style=color:#e6db74>&#39;Male&#39;</span>, <span style=color:#e6db74>&#39;Female&#39;</span>, <span style=color:#e6db74>&#39;Other&#39;</span>)) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    Age NUMBER(<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    MaritalStatus NVARCHAR2(<span style=color:#ae81ff>20</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    NumCompanies NUMBER(<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    TeamSize NUMBER(<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    NumReports NUMBER(<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    TrainingHoursPerYear NUMBER(<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    HaveOT CHAR(<span style=color:#ae81ff>5</span>) <span style=color:#66d9ef>CHECK</span> (HaveOT <span style=color:#66d9ef>IN</span> (<span style=color:#e6db74>&#39;TRUE&#39;</span>, <span style=color:#e6db74>&#39;FALSE&#39;</span>)) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    Experience NUMBER(<span style=color:#ae81ff>3</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>    JobLevelID NUMBER,
-</span></span><span style=display:flex><span>    DeptID NUMBER,
-</span></span><span style=display:flex><span>    EmpTypeID NUMBER,
-</span></span><span style=display:flex><span>    EduLevelID NUMBER,
-</span></span><span style=display:flex><span>    CommuteID NUMBER,
-</span></span><span style=display:flex><span>    EmployeeSurveyID NUMBER,
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CONSTRAINT</span> fk_employeedetails_joblevel_id <span style=color:#66d9ef>FOREIGN</span> <span style=color:#66d9ef>KEY</span> (JobLevelID) <span style=color:#66d9ef>REFERENCES</span> JobLevel(JobLevelID),
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CONSTRAINT</span> fk_employeedetails_dept_id <span style=color:#66d9ef>FOREIGN</span> <span style=color:#66d9ef>KEY</span> (DeptID) <span style=color:#66d9ef>REFERENCES</span> Department(DeptID),
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CONSTRAINT</span> fk_employeedetails_emptype_id <span style=color:#66d9ef>FOREIGN</span> <span style=color:#66d9ef>KEY</span> (EmpTypeID) <span style=color:#66d9ef>REFERENCES</span> EmpType(EmpTypeID),
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CONSTRAINT</span> fk_employeedetails_edulevel_id <span style=color:#66d9ef>FOREIGN</span> <span style=color:#66d9ef>KEY</span> (EduLevelID) <span style=color:#66d9ef>REFERENCES</span> EduLevel(EduLevelID),
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CONSTRAINT</span> fk_employeedetails_commute_id <span style=color:#66d9ef>FOREIGN</span> <span style=color:#66d9ef>KEY</span> (CommuteID) <span style=color:#66d9ef>REFERENCES</span> Commute(CommuteID),
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CONSTRAINT</span> fk_employeedetails_employeesurvey_id <span style=color:#66d9ef>FOREIGN</span> <span style=color:#66d9ef>KEY</span> (EmployeeSurveyID) <span style=color:#66d9ef>REFERENCES</span> EmployeeSurvey(EmployeeSurveyID)
-</span></span><span style=display:flex><span>);
-</span></span></code></pre></div><h3 id=step-3-sql-analysis>Step 3: SQL Analysis</h3><p>With the database set up, I began writing and executing SQL queries to analyze the data. These queries focused on comparing key metrics, such as workload, employee satisfaction, and sleep patterns, across different departments and job levels.</p><p>Here are some of the key analyses I performed:</p><p><strong>1. Identifying Employees with High Workload but High Job Satisfaction</strong> - This query identifies employees who report high workload but also high job satisfaction, which could indicate resilience or effective coping mechanisms.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> ed.EmpID, 
-</span></span><span style=display:flex><span>    j.JobLevelType, 
-</span></span><span style=display:flex><span>    d.DeptName, 
-</span></span><span style=display:flex><span>    es.Workload, 
-</span></span><span style=display:flex><span>    es.JobSatisfaction
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeSurvey es
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> EmployeeDetails ed <span style=color:#66d9ef>ON</span> ed.employeesurveyid <span style=color:#f92672>=</span> es.employeesurveyid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> JobLevel j <span style=color:#66d9ef>ON</span> ed.joblevelid <span style=color:#f92672>=</span> j.joblevelid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> Department d <span style=color:#66d9ef>ON</span> d.deptid <span style=color:#f92672>=</span> ed.deptid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>WHERE</span> es.Workload <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>AND</span> es.JobSatisfaction <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>4</span>;
-</span></span></code></pre></div><p><img src=/images/projects/high_workload_high_satisfaction_output.png alt="High Workload High Satisfaction"></p><ul><li>Many Senior-level employees reported high workloads but also high job satisfaction, suggesting they thrive in demanding roles.</li><li>Employees in the IT department were prominent in the results, indicating they handle high workloads while staying satisfied and engaged.</li><li>Several Junior employees and Interns/Freshers reported high workloads and satisfaction, reflecting effective onboarding and supportive environments.</li></ul><p><strong>2. Gender Distribution in High Workload Roles</strong> - This query examines whether one gender consistently takes on more demanding jobs.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> ed.Gender, 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>COUNT</span>(<span style=color:#f92672>*</span>) <span style=color:#66d9ef>AS</span> HighWorkloadEmployees
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeDetails ed
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> Employeesurvey es <span style=color:#66d9ef>ON</span> ed.employeesurveyid <span style=color:#f92672>=</span> es.employeesurveyid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>WHERE</span> es.Workload <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>GROUP</span> <span style=color:#66d9ef>BY</span> ed.Gender
-</span></span><span style=display:flex><span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> HighWorkloadEmployees <span style=color:#66d9ef>DESC</span>;
-</span></span></code></pre></div><p><img src=/images/projects/gender_and_job_demands_analysis.png alt="Gender Distribution"></p><ul><li>Male employees make up the majority (284) of those in high-workload roles, suggesting potential gender disparities in workload distribution.</li><li>A significant number of female employees (239) are in high-workload roles, indicating that women are also taking on demanding positions.</li><li>Employees identifying as Other (39) are underrepresented in high-workload roles, highlighting potential inclusivity gaps in high-pressure positions.</li></ul><p><strong>3. Impact of Overtime on Job Satisfaction</strong> - This query identifies the point at which overtime starts negatively affecting job satisfaction.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CASE</span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> es.WorkLoad <span style=color:#66d9ef>BETWEEN</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>AND</span> <span style=color:#ae81ff>2</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Low&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> es.WorkLoad <span style=color:#66d9ef>BETWEEN</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>AND</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Moderate&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> es.WorkLoad <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;High&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>END</span> <span style=color:#66d9ef>AS</span> WorkLoadCategory,
-</span></span><span style=display:flex><span>    ROUND(<span style=color:#66d9ef>AVG</span>(es.JobSatisfaction), <span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>AS</span> AvgJobSatisfaction, 
-</span></span><span style=display:flex><span>    ROUND(<span style=color:#66d9ef>AVG</span>(es.Stress), <span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>AS</span> AvgStress,
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>COUNT</span>(<span style=color:#f92672>*</span>) <span style=color:#66d9ef>AS</span> EmployeeCount,
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CASE</span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> <span style=color:#66d9ef>AVG</span>(es.JobSatisfaction) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Low Job Satisfaction&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> <span style=color:#66d9ef>AVG</span>(es.Stress) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;High Stress&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>ELSE</span> <span style=color:#e6db74>&#39;Normal&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>END</span> <span style=color:#66d9ef>AS</span> Condition
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeSurvey es
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> EmployeeDetails ed <span style=color:#66d9ef>ON</span> ed.employeesurveyid <span style=color:#f92672>=</span> es.employeesurveyid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>WHERE</span> haveOT <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;TRUE&#39;</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>GROUP</span> <span style=color:#66d9ef>BY</span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CASE</span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> es.WorkLoad <span style=color:#66d9ef>BETWEEN</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>AND</span> <span style=color:#ae81ff>2</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Low&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> es.WorkLoad <span style=color:#66d9ef>BETWEEN</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>AND</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Moderate&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> es.WorkLoad <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;High&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>END</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> AvgJobSatisfaction;
-</span></span></code></pre></div><p><img src=/images/projects/overtime_impact_on_job_satisfaction_and_workload.png alt="Impact of Overtime on Job Distribution"></p><ul><li>Employees with high workloads reported the lowest average job satisfaction (2.58), indicating that excessive overtime negatively impacts morale.</li><li>Even employees with moderate workloads reported low job satisfaction (2.99), suggesting that overtime, even in smaller amounts, can harm employee well-being.</li><li>Employees with low workloads reported the highest job satisfaction (3.46) and normal stress levels, highlighting the importance of balanced workloads.</li></ul><p><strong>4. Identifying Employees Deserving Promotions</strong> - This query highlights employees who might deserve a promotion based on their responsibilities.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> ed.EmpID, 
-</span></span><span style=display:flex><span>    j.JobLevelType, 
-</span></span><span style=display:flex><span>    ed.NumReports
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeDetails ed
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> JobLevel j <span style=color:#66d9ef>ON</span> ed.joblevelid <span style=color:#f92672>=</span> j.joblevelid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>WHERE</span> ed.NumReports <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>AND</span> j.JobLevelType <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>IN</span> (<span style=color:#e6db74>&#39;Senior&#39;</span>, <span style=color:#e6db74>&#39;Lead&#39;</span>);
-</span></span></code></pre></div><p><img src=/images/projects/employees_eligible_for_promotion_based_on_responsibilities.png alt="Identifying Employees Deserving Promotion"></p><ul><li>Organizations could consider assigning more responsibilities such as reporting tasks to employees to identify and prepare them for promotions.</li></ul><p><strong>5. Stress Triggers by Department</strong> - This query examines whether workload, commute distance, or lack of physical activity is a major cause of stress in certain departments.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> d.DeptName, 
-</span></span><span style=display:flex><span>    ROUND(<span style=color:#66d9ef>AVG</span>(es.Workload),<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>AS</span> AvgWorkload, 
-</span></span><span style=display:flex><span>    ROUND(<span style=color:#66d9ef>AVG</span>(es.Stress),<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>AS</span> AvgStress,
-</span></span><span style=display:flex><span>    ROUND(<span style=color:#66d9ef>AVG</span>(<span style=color:#66d9ef>c</span>.CommuteDistance),<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>AS</span> AvgCommuteDistance,
-</span></span><span style=display:flex><span>    ROUND(<span style=color:#66d9ef>AVG</span>(es.PhysicalActivities),<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>AS</span> AvgPhysicalActivity
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeSurvey es
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> EmployeeDetails ed <span style=color:#66d9ef>ON</span> ed.employeesurveyid <span style=color:#f92672>=</span> es.employeesurveyid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> Department d <span style=color:#66d9ef>ON</span> d.deptid <span style=color:#f92672>=</span> ed.deptid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> Commute <span style=color:#66d9ef>c</span> <span style=color:#66d9ef>ON</span> <span style=color:#66d9ef>c</span>.commuteid <span style=color:#f92672>=</span> ed.commuteid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>GROUP</span> <span style=color:#66d9ef>BY</span> d.DeptName;
-</span></span></code></pre></div><p><img src=/images/projects/stress_triggers_by_department.png alt="Stress Triggers by Department"></p><ul><li>Employees in Marketing and Legal reported higher average workloads (3.10 and 3.01) and stress levels (1.75 and 1.78), likely due to demanding roles and longer commutes.</li><li>HR and Customer Service employees reported lower stress levels (1.76 and 1.69) and workloads (2.79 and 2.86), suggesting better work-life balance in these departments.</li><li>Departments with longer average commute distances (e.g., Legal at 14.30) tended to report slightly higher stress levels, highlighting the impact of commuting on employee well-being.</li></ul><p><strong>6. Sleep Patterns by Department</strong> - This query identifies the department where employees get the most sleep on average.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> d.DeptName, 
-</span></span><span style=display:flex><span>    ROUND(<span style=color:#66d9ef>AVG</span>(es.SleepHours),<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>AS</span> AvgSleepHours
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeSurvey es
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> EmployeeDetails ed <span style=color:#66d9ef>ON</span> es.employeesurveyid <span style=color:#f92672>=</span> ed.employeesurveyid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> Department d <span style=color:#66d9ef>ON</span> ed.deptid <span style=color:#f92672>=</span> d.deptid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>GROUP</span> <span style=color:#66d9ef>BY</span> d.DeptName
-</span></span><span style=display:flex><span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> AvgSleepHours <span style=color:#66d9ef>DESC</span>;
-</span></span></code></pre></div><p><img src=/images/projects/average_sleep_by_department.png alt="Sleep Patters by Department"></p><ul><li>Employees in the IT department reported the highest average sleep hours (7.09), suggesting better work-life balance or flexible schedules.</li><li>HR employees had the lowest average sleep hours (6.88), possibly due to higher stress or demanding roles despite lower workloads.</li><li>Most departments reported similar sleep patterns (around 7 hours), indicating that sleep habits are relatively consistent across the organization.</li></ul><p><strong>7. Older Employees in Lower Job Levels</strong> - This query examines whether older employees are stuck in lower job levels.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> ed.Age, 
-</span></span><span style=display:flex><span>    j.JobLevelType, 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>COUNT</span>(<span style=color:#f92672>*</span>) <span style=color:#66d9ef>AS</span> EmployeeCount
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeDetails ed
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> Joblevel j <span style=color:#66d9ef>ON</span> ed.joblevelid <span style=color:#f92672>=</span> j.joblevelid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>GROUP</span> <span style=color:#66d9ef>BY</span> ed.Age, j.jobleveltype
-</span></span><span style=display:flex><span><span style=color:#66d9ef>HAVING</span> j.JobLevelType <span style=color:#66d9ef>IN</span> (<span style=color:#e6db74>&#39;Junior&#39;</span>, <span style=color:#e6db74>&#39;Intern/Fresher&#39;</span>) <span style=color:#66d9ef>AND</span> Age <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>28</span>;
-</span></span></code></pre></div><p><img src=/images/projects/age_and_job_level_analysis.png alt="Older Employees in Lower Job Levels"></p><ul><li>Only one employee aged 29 is in a Junior-level role, suggesting potential challenges in career progression for older employees.
-<strong>8. Creating Employee Personas</strong> - This query creates personas based on unique clusters of employee attributes.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CASE</span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> <span style=color:#66d9ef>c</span>.CommuteDistance <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>10</span> <span style=color:#66d9ef>AND</span> es.WLB <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>AND</span> es.Stress <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>AND</span> es.SleepHours <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>7</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Exhausted Commuter&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> <span style=color:#66d9ef>c</span>.CommuteDistance <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>10</span> <span style=color:#66d9ef>AND</span> es.WLB <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>AND</span> es.Stress <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Balanced Achiever&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> es.Workload <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>AND</span> es.Stress <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>AND</span> es.JobSatisfaction <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Stressed Overachiever&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>ELSE</span> <span style=color:#e6db74>&#39;Other&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>END</span> <span style=color:#66d9ef>AS</span> Persona,
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>COUNT</span>(<span style=color:#f92672>*</span>) <span style=color:#66d9ef>AS</span> TotalEmployees
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeSurvey es
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> EmployeeDetails ed <span style=color:#66d9ef>ON</span> ed.employeesurveyid <span style=color:#f92672>=</span> es.employeesurveyid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> Commute <span style=color:#66d9ef>c</span> <span style=color:#66d9ef>ON</span> <span style=color:#66d9ef>c</span>.commuteid <span style=color:#f92672>=</span> ed.commuteid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>GROUP</span> <span style=color:#66d9ef>BY</span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CASE</span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> <span style=color:#66d9ef>c</span>.CommuteDistance <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>10</span> <span style=color:#66d9ef>AND</span> es.WLB <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>AND</span> es.Stress <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>AND</span> es.SleepHours <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>7</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Exhausted Commuter&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> <span style=color:#66d9ef>c</span>.CommuteDistance <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>10</span> <span style=color:#66d9ef>AND</span> es.WLB <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>AND</span> es.Stress <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Balanced Achiever&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>WHEN</span> es.Workload <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>AND</span> es.Stress <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>AND</span> es.JobSatisfaction <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>4</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;Stressed Overachiever&#39;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>ELSE</span> <span style=color:#e6db74>&#39;Other&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>END</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> TotalEmployees <span style=color:#66d9ef>DESC</span>;
-</span></span></code></pre></div><p><img src=/images/projects/employee_personas_based_on_attributes.png alt="Creating Employee Personas"></p><ul><li>The Balanced Achiever persona (459 employees) represents employees with good work-life balance and low stress, indicating a healthy work environment for many.</li><li>The Exhausted Commuter persona (24 employees) highlights a small group struggling with long commutes, high stress, and poor work-life balance.</li><li>The Stressed Overachiever persona (5 employees) is the smallest group, representing employees with high workloads, stress, and satisfaction, suggesting they thrive under pressure but are at risk of burnout.</li></ul><p><strong>9. Employees with the Most Extreme Work-Life Imbalance</strong> - This query identifies employees with extreme work-life imbalances, focusing on high stress, long commutes, and poor sleep.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> 
-</span></span><span style=display:flex><span>    ed.EmpID,
-</span></span><span style=display:flex><span>    j.JobLevelType,
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>c</span>.CommuteDistance,
-</span></span><span style=display:flex><span>    es.Workload,
-</span></span><span style=display:flex><span>    es.Stress,
-</span></span><span style=display:flex><span>    es.WLB,
-</span></span><span style=display:flex><span>    es.SleepHours
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeSurvey es
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> EmployeeDetails ed <span style=color:#66d9ef>ON</span> ed.employeesurveyid <span style=color:#f92672>=</span> es.employeesurveyid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> Commute <span style=color:#66d9ef>c</span> <span style=color:#66d9ef>ON</span> ed.commuteid <span style=color:#f92672>=</span> <span style=color:#66d9ef>c</span>.commuteid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> JobLevel j  <span style=color:#66d9ef>ON</span> j.joblevelid <span style=color:#f92672>=</span> ed.joblevelid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>WHERE</span> (es.Stress <span style=color:#66d9ef>BETWEEN</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>AND</span> <span style=color:#ae81ff>5</span> <span style=color:#66d9ef>OR</span> es.Workload <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>4</span>) 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>AND</span> es.WLB <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>AND</span> es.SleepHours <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>6</span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>AND</span> <span style=color:#66d9ef>c</span>.CommuteDistance <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>15</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> es.Stress <span style=color:#66d9ef>DESC</span>, es.WLB <span style=color:#66d9ef>ASC</span>;
-</span></span></code></pre></div><p><img src=/images/projects/employees_with_extreme_work_life_imbalance.png alt="Employees with the most extreme work-life imbalance"></p><ul><li>Employees with extreme work-life imbalances often face high stress levels (3-4) and long commutes (over 15 miles), exacerbating their challenges.</li><li>Junior employees and Interns/Freshers are prominently represented, suggesting that early-career roles may lack support for work-life balance.</li><li>Most employees in this group report low sleep hours (below 6 hours) and poor work-life balance (WLB ≤ 3), indicating a need for better wellness initiatives.</li></ul><p><strong>10. Workload and Satisfaction by Job Levels and Departments</strong> - This query explores the relationship between workload and job satisfaction across different job levels and departments.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> 
-</span></span><span style=display:flex><span>    d.DeptName,
-</span></span><span style=display:flex><span>    j.JobLevelType,
-</span></span><span style=display:flex><span>    ROUND(<span style=color:#66d9ef>AVG</span>(es.Workload),<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>AS</span> AvgWorkload,
-</span></span><span style=display:flex><span>    ROUND(<span style=color:#66d9ef>AVG</span>(es.JobSatisfaction),<span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>AS</span> AvgJobSatisfaction,
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>COUNT</span>(<span style=color:#f92672>*</span>) <span style=color:#66d9ef>AS</span> TotalEmployees
-</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> EmployeeSurvey es
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> EmployeeDetails ed <span style=color:#66d9ef>ON</span> es.employeesurveyid <span style=color:#f92672>=</span> ed.employeesurveyid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> Department d <span style=color:#66d9ef>ON</span> ed.deptid <span style=color:#f92672>=</span> d.deptid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> JobLevel j <span style=color:#66d9ef>ON</span> j.joblevelid <span style=color:#f92672>=</span> ed.joblevelid
-</span></span><span style=display:flex><span><span style=color:#66d9ef>GROUP</span> <span style=color:#66d9ef>BY</span> d.DeptName, j.JobLevelType
-</span></span><span style=display:flex><span><span style=color:#66d9ef>HAVING</span> <span style=color:#66d9ef>AVG</span>(es.Workload) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>3</span> <span style=color:#66d9ef>AND</span> <span style=color:#66d9ef>AVG</span>(es.JobSatisfaction) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>3</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> AvgJobSatisfaction <span style=color:#66d9ef>DESC</span>, AvgWorkload <span style=color:#66d9ef>ASC</span>;
-</span></span></code></pre></div><p><img src=/images/projects/workload_and_satisfaction_by_job_levels_and_departments.png alt="Workload and Satisfaction by Job Levels and Department"></p><ul><li>Senior-level employees in departments like Marketing, Finance, and Legal report higher job satisfaction (3.47–3.52) despite moderate workloads, suggesting they find their roles rewarding.</li><li>Interns/Freshers and Junior employees in IT and Finance report lower satisfaction (3.18–3.35) despite similar workloads, indicating potential struggles with role adaptation or support.</li><li>Marketing Leads report the highest average workload (3.42) but relatively lower satisfaction (3.21), highlighting potential burnout risks in leadership roles.</li></ul><h3 id=step-4-insights-visualization>Step 4: Insights Visualization</h3><p>To further enhance the analysis and present the results in a more understandable format, I used Tableau for data visualization of few queries. The visualizations provided a clear way to convey the insights derived from the SQL queries, making it easier to spot trends and patterns.</p><p><img src=/images/projects/employee_survey_analysis_dashboard.png alt="Insights Visualization"></p><ul><li>Some employees, especially in Finance and Customer Service, report high workload but still maintain decent job satisfaction, suggesting other factors influence satisfaction..</li><li>Mid-level and lead roles tend to experience the highest workload, while interns and juniors have relatively lower but varying job satisfaction across departments.</li><li>HR and Operations employees get the least sleep (~6.88-6.92 hours), potentially indicating higher stress or poor work-life balance, while IT employees get the most (~7.09 hours).</li><li>Workload and job satisfaction patterns differ significantly across Sales, Marketing, and IT, hinting at department-specific challenges in workload distribution and engagement.</li></ul><h2 id=key-learnings--takeaway>Key Learnings & Takeaway</h2><ul><li>This project reinforced the importance of using data to uncover actionable insights, such as identifying stress triggers, workload imbalances, and opportunities for employee growth.</li><li>The analysis highlighted the impact of workload, commute, and sleep on employee well-being, emphasizing the need for organizations to prioritize work-life balance.</li><li>Working with SQL, Tableau, and large datasets taught me the value of adaptability and continuous learning in solving real-world problems.</li></ul></div></article></div><script type=text/javascript src=/main.js defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.ico">
+
+  <title>
+    Employee Survey Analysis - Nimisha Pokam
+  </title>
+
+  <meta name="description" content="Analysis of employee engagement survey data using SQL and Tableau." /><meta name="generator" content="Hugo 0.145.0">
+
+  <link rel="stylesheet" href="http://localhost:1313/css/main.css" />
+
+  
+  
+
+  <meta property="og:url" content="http://localhost:1313/projects/employee-survey-analysis/">
+  <meta property="og:site_name" content="Nimisha Pokam">
+  <meta property="og:title" content="Employee Survey Analysis">
+  <meta property="og:description" content="Analysis of employee engagement survey data using SQL and Tableau.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-03-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-21T19:16:50-05:00">
+
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Employee Survey Analysis">
+  <meta name="twitter:description" content="Analysis of employee engagement survey data using SQL and Tableau.">
+
+
+  
+  <meta itemprop="name" content="Employee Survey Analysis">
+  <meta itemprop="description" content="Analysis of employee engagement survey data using SQL and Tableau.">
+  <meta itemprop="datePublished" content="2025-03-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-21T19:16:50-05:00">
+  <meta itemprop="wordCount" content="2104">
+
+  
+  <meta itemprop="name" content="Employee Survey Analysis">
+  <meta itemprop="description" content="Analysis of employee engagement survey data using SQL and Tableau.">
+  <meta itemprop="datePublished" content="2025-03-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-21T19:16:50-05:00">
+  <meta itemprop="wordCount" content="2104">
+</head>
+<body class="flex relative h-full min-h-screen"><aside class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:basis-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar flex-shrink-0">
+  <p class="font-bold mb-5 flex items-center gap-2">
+    <button aria-label="Close sidebar" class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <a href="http://localhost:1313/" class="px-2">
+      <span>Nimisha Pokam</span>
+    </a>
+    <button aria-label="Toggle dark mode" class="dark-mode-toggle p-2 rounded border dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 ml-auto">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    </button>
+  </p>
+
+  
+  <ul class="list-none flex flex-col gap-1">
+    
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between hover:bg-slate-200 dark:hover:bg-slate-700" href="/">
+        <span>About Me</span>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between hover:bg-slate-200 dark:hover:bg-slate-700" href="/career">
+        <span>Education &amp; Experience</span>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between hover:bg-slate-200 dark:hover:bg-slate-700" href="/projects">
+        <span>Projects</span>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between hover:bg-slate-200 dark:hover:bg-slate-700" href="/stack">
+        <span>Tech Stack</span>
+      </a>
+    </li>
+    
+  </ul>
+
+  <div class="flex-1"></div>
+
+  <ul class="list-none flex flex-wrap justify-center gap-1 pt-2 border-t border-slate-200 dark:border-slate-600">
+    <li><a href="https://github.com/NimishaPokam" target="_blank" rel="noopener noreferrer" class="px-2 py-1.5 rounded-md text-sm block hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+  stroke-linecap="round" stroke-linejoin="round">
+  <path
+    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+</svg></a></li>
+    <li><a href="https://www.linkedin.com/in/nimisha-p-b1b9922a9/" target="_blank" rel="noopener noreferrer" class="px-2 py-1.5 rounded-md text-sm block hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+  <rect x="2" y="9" width="4" height="12" />
+  <circle cx="4" cy="4" r="2" />
+</svg></a></li>
+    <li><a href="mailto:pnimisha@depaul.edu" class="px-2 py-1.5 rounded-md text-sm block hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+  fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <rect x="3" y="5" width="18" height="14" rx="2" />
+  <polyline points="3 7 12 13 21 7" />
+</svg></a></li>
+    <li><a href="https://www.instagram.com/momwantsyouhomebydinner" target="_blank" rel="noopener noreferrer" class="px-2 py-1.5 rounded-md text-sm block hover:bg-slate-200 dark:hover:bg-slate-700"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+  stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+</svg></a></li>
+  </ul>
+</aside>
+
+<div class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay"></div>
+
+<button aria-label="Toggle Sidebar" class="md:hidden absolute top-3 left-3 z-10 menu-trigger p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-100"><svg class="h-6 w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" />
+  <line x1="4" y1="6" x2="20" y2="6" />
+  <line x1="4" y1="12" x2="20" y2="12" />
+  <line x1="4" y1="18" x2="16" y2="18" />
+</svg></button>
+<div class="flex flex-1 h-screen relative w-full min-w-0">
+  <section class="w-full h-full md:min-w-[400px] md:w-1/4 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col py-3 overflow-y-auto scroll-area flex-shrink-0">
+    
+    
+    <a href="http://localhost:1313/projects/">
+      <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">Projects</h2>
+    </a>
+    <div class="space-y-2.5">
+      
+      <a class="article block px-3 py-4 hover:bg-slate-200 dark:hover:bg-slate-700" href="/projects/digitalisation-impact-on-economic-growth/">
+        <h3 class="text-lg font-semibold mb-0.5">Digitalisation Impact on Economic Growth</h3>
+        <div class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
+          Exploring the relationship between digitalization and economic growth using Python libraries for data analysis and visualization.
+        </div>
+      </a>
+      
+      <a class="article block px-3 py-4 bg-slate-900 dark:bg-slate-700 text-slate-50" href="/projects/employee-survey-analysis/">
+        <h3 class="text-lg font-semibold mb-0.5">Employee Survey Analysis</h3>
+        <div class="text-sm text-slate-400 line-clamp-2">
+          Analysis of employee engagement survey data using SQL and Tableau.
+        </div>
+      </a>
+      </div>
+    
+  </section>
+
+  <article class="overflow-y-auto h-screen w-full">
+    <div class="px-6 py-20 w-full lg:w-[880px] mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto">
+      <h1 class="!mb-2">Employee Survey Analysis</h1>
+      <p class="text-sm text-slate-500 !mb-8">March 14, 2025</p>
+      <h2 id="overview">Overview</h2>
+<p>This project involves a deep dive into an employee survey dataset from Kaggle, using SQL and Tableau to uncover actionable insights related to work-life balance, stress levels, workload, and sleep habits across various departments and job levels. The goal was to analyze key trends and patterns in the dataset and present them in a visually compelling way.</p>
+<h2 id="tools--technologies-used">Tools &amp; Technologies Used</h2>
+<ul>
+<li><strong>Draw.io</strong>: Used to create the relational schema for the database.</li>
+<li><strong>SQL</strong>: Core tool for data extraction and analysis.</li>
+<li><strong>Tableau</strong>: Supplementary tool for visualization.</li>
+<li><strong>GitHub</strong>: Version control and collaboration platform.</li>
+</ul>
+<h2 id="process-overview">Process Overview</h2>
+<h3 id="step-1-dataset-selection-and-schema-design">Step 1: Dataset Selection and Schema Design</h3>
+<p>The project began with the selection of a dataset sourced from <a href="https://www.kaggle.com/datasets/lainguyn123/employee-survey/data"  target="_blank" rel="noopener" >Kaggle</a>, which contained responses from an employee survey. This dataset provided information on various aspects of employee work-life balance, stress levels, workload, and sleep habits.</p>
+<p>To ensure a clear and efficient database structure, I used <a href="https://www.drawio.com/"  target="_blank" rel="noopener" ><strong>Draw.io</strong></a> to create a relational schema. This diagram helped identify the relationships between key entities, such as employee details, job levels, departments, and survey responses.</p>
+<p><img src="/images/projects/relational_schema.drawio.png" alt="Relational Schema"></p>
+<h3 id="step-2-database-creation-and-data-preparation">Step 2: Database Creation and Data Preparation</h3>
+<p>After finalizing the schema design, I proceeded to create the tables in <strong>Oracle SQL</strong>. This involved defining the structure of each table, including the necessary fields and their data types. Constraints were applied to ensure data integrity, such as primary keys for unique identification and foreign keys to establish relationships between tables.</p>
+<p>Once the tables were created, I <a href="https://github.com/NimishaPokam/employee-survey/blob/main/Insert_Queries/Employee_Survey-%20INSERT%20QUERIES.sql"  target="_blank" rel="noopener" ><strong>inserted 20,000 rows of data</strong></a> into the database. This step was crucial for ensuring the dataset was robust and ready for analysis.</p>
+<p>Here’s the SQL code used to create the tables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- Create JobLevel Table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> JobLevel (
+</span></span><span style="display:flex;"><span>    JobLevelID NUMBER <span style="color:#66d9ef">GENERATED</span> ALWAYS <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">IDENTITY</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    JobLevelType NVARCHAR2(<span style="color:#ae81ff">15</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Create Department Table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> Department (
+</span></span><span style="display:flex;"><span>    DeptID NUMBER <span style="color:#66d9ef">GENERATED</span> ALWAYS <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">IDENTITY</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    DeptName NVARCHAR2(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Create EmpType Table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> EmpType (
+</span></span><span style="display:flex;"><span>    EmpTypeID NUMBER <span style="color:#66d9ef">GENERATED</span> ALWAYS <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">IDENTITY</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    EmpTypeName NVARCHAR2(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Create EduLevel Table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> EduLevel (
+</span></span><span style="display:flex;"><span>    EduLevelID NUMBER <span style="color:#66d9ef">GENERATED</span> ALWAYS <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">IDENTITY</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    EduLevelName NVARCHAR2(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Create Commute Table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> Commute (
+</span></span><span style="display:flex;"><span>    CommuteID NUMBER <span style="color:#66d9ef">GENERATED</span> ALWAYS <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">IDENTITY</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    CommuteMode NVARCHAR2(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    CommuteDistance NUMBER(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Create EmployeeSurvey Table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> EmployeeSurvey (
+</span></span><span style="display:flex;"><span>    EmployeeSurveyID NUMBER <span style="color:#66d9ef">GENERATED</span> ALWAYS <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">IDENTITY</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    WLB NUMBER(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    WorkEnv NUMBER(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    WorkLoad NUMBER(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    Stress NUMBER(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    JobSatisfaction NUMBER(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    PhysicalActivities NUMBER(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    SleepHours NUMBER(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Create EmployeeDetails Table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> EmployeeDetails (
+</span></span><span style="display:flex;"><span>    EmpID NUMBER <span style="color:#66d9ef">GENERATED</span> ALWAYS <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">IDENTITY</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    Gender VARCHAR2(<span style="color:#ae81ff">6</span>) <span style="color:#66d9ef">CHECK</span> (Gender <span style="color:#66d9ef">IN</span> (<span style="color:#e6db74">&#39;Male&#39;</span>, <span style="color:#e6db74">&#39;Female&#39;</span>, <span style="color:#e6db74">&#39;Other&#39;</span>)) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    Age NUMBER(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    MaritalStatus NVARCHAR2(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    NumCompanies NUMBER(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    TeamSize NUMBER(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    NumReports NUMBER(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    TrainingHoursPerYear NUMBER(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    HaveOT CHAR(<span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">CHECK</span> (HaveOT <span style="color:#66d9ef">IN</span> (<span style="color:#e6db74">&#39;TRUE&#39;</span>, <span style="color:#e6db74">&#39;FALSE&#39;</span>)) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    Experience NUMBER(<span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    JobLevelID NUMBER,
+</span></span><span style="display:flex;"><span>    DeptID NUMBER,
+</span></span><span style="display:flex;"><span>    EmpTypeID NUMBER,
+</span></span><span style="display:flex;"><span>    EduLevelID NUMBER,
+</span></span><span style="display:flex;"><span>    CommuteID NUMBER,
+</span></span><span style="display:flex;"><span>    EmployeeSurveyID NUMBER,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CONSTRAINT</span> fk_employeedetails_joblevel_id <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (JobLevelID) <span style="color:#66d9ef">REFERENCES</span> JobLevel(JobLevelID),
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CONSTRAINT</span> fk_employeedetails_dept_id <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (DeptID) <span style="color:#66d9ef">REFERENCES</span> Department(DeptID),
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CONSTRAINT</span> fk_employeedetails_emptype_id <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (EmpTypeID) <span style="color:#66d9ef">REFERENCES</span> EmpType(EmpTypeID),
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CONSTRAINT</span> fk_employeedetails_edulevel_id <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (EduLevelID) <span style="color:#66d9ef">REFERENCES</span> EduLevel(EduLevelID),
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CONSTRAINT</span> fk_employeedetails_commute_id <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (CommuteID) <span style="color:#66d9ef">REFERENCES</span> Commute(CommuteID),
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CONSTRAINT</span> fk_employeedetails_employeesurvey_id <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (EmployeeSurveyID) <span style="color:#66d9ef">REFERENCES</span> EmployeeSurvey(EmployeeSurveyID)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="step-3-sql-analysis">Step 3: SQL Analysis</h3>
+<p>With the database set up, I began writing and executing SQL queries to analyze the data. These queries focused on comparing key metrics, such as workload, employee satisfaction, and sleep patterns, across different departments and job levels.</p>
+<p>Here are some of the key analyses I performed:</p>
+<p><strong>1. Identifying Employees with High Workload but High Job Satisfaction</strong> - This query identifies employees who report high workload but also high job satisfaction, which could indicate resilience or effective coping mechanisms.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> ed.EmpID, 
+</span></span><span style="display:flex;"><span>    j.JobLevelType, 
+</span></span><span style="display:flex;"><span>    d.DeptName, 
+</span></span><span style="display:flex;"><span>    es.Workload, 
+</span></span><span style="display:flex;"><span>    es.JobSatisfaction
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeSurvey es
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> EmployeeDetails ed <span style="color:#66d9ef">ON</span> ed.employeesurveyid <span style="color:#f92672">=</span> es.employeesurveyid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> JobLevel j <span style="color:#66d9ef">ON</span> ed.joblevelid <span style="color:#f92672">=</span> j.joblevelid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> Department d <span style="color:#66d9ef">ON</span> d.deptid <span style="color:#f92672">=</span> ed.deptid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> es.Workload <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">AND</span> es.JobSatisfaction <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span>;
+</span></span></code></pre></div><p><img src="/images/projects/high_workload_high_satisfaction_output.png" alt="High Workload High Satisfaction"></p>
+<ul>
+<li>Many Senior-level employees reported high workloads but also high job satisfaction, suggesting they thrive in demanding roles.</li>
+<li>Employees in the IT department were prominent in the results, indicating they handle high workloads while staying satisfied and engaged.</li>
+<li>Several Junior employees and Interns/Freshers reported high workloads and satisfaction, reflecting effective onboarding and supportive environments.</li>
+</ul>
+<p><strong>2. Gender Distribution in High Workload Roles</strong> - This query examines whether one gender consistently takes on more demanding jobs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> ed.Gender, 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> HighWorkloadEmployees
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeDetails ed
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> Employeesurvey es <span style="color:#66d9ef">ON</span> ed.employeesurveyid <span style="color:#f92672">=</span> es.employeesurveyid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> es.Workload <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> ed.Gender
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> HighWorkloadEmployees <span style="color:#66d9ef">DESC</span>;
+</span></span></code></pre></div><p><img src="/images/projects/gender_and_job_demands_analysis.png" alt="Gender Distribution"></p>
+<ul>
+<li>Male employees make up the majority (284) of those in high-workload roles, suggesting potential gender disparities in workload distribution.</li>
+<li>A significant number of female employees (239) are in high-workload roles, indicating that women are also taking on demanding positions.</li>
+<li>Employees identifying as Other (39) are underrepresented in high-workload roles, highlighting potential inclusivity gaps in high-pressure positions.</li>
+</ul>
+<p><strong>3. Impact of Overtime on Job Satisfaction</strong> - This query identifies the point at which overtime starts negatively affecting job satisfaction.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CASE</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> es.WorkLoad <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Low&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> es.WorkLoad <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Moderate&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> es.WorkLoad <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;High&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">AS</span> WorkLoadCategory,
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#66d9ef">AVG</span>(es.JobSatisfaction), <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">AS</span> AvgJobSatisfaction, 
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#66d9ef">AVG</span>(es.Stress), <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">AS</span> AvgStress,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> EmployeeCount,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CASE</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> <span style="color:#66d9ef">AVG</span>(es.JobSatisfaction) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Low Job Satisfaction&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> <span style="color:#66d9ef">AVG</span>(es.Stress) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;High Stress&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">ELSE</span> <span style="color:#e6db74">&#39;Normal&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">AS</span> Condition
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeSurvey es
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> EmployeeDetails ed <span style="color:#66d9ef">ON</span> ed.employeesurveyid <span style="color:#f92672">=</span> es.employeesurveyid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> haveOT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;TRUE&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CASE</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> es.WorkLoad <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Low&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> es.WorkLoad <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Moderate&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> es.WorkLoad <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;High&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">END</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> AvgJobSatisfaction;
+</span></span></code></pre></div><p><img src="/images/projects/overtime_impact_on_job_satisfaction_and_workload.png" alt="Impact of Overtime on Job Distribution"></p>
+<ul>
+<li>Employees with high workloads reported the lowest average job satisfaction (2.58), indicating that excessive overtime negatively impacts morale.</li>
+<li>Even employees with moderate workloads reported low job satisfaction (2.99), suggesting that overtime, even in smaller amounts, can harm employee well-being.</li>
+<li>Employees with low workloads reported the highest job satisfaction (3.46) and normal stress levels, highlighting the importance of balanced workloads.</li>
+</ul>
+<p><strong>4. Identifying Employees Deserving Promotions</strong> - This query highlights employees who might deserve a promotion based on their responsibilities.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> ed.EmpID, 
+</span></span><span style="display:flex;"><span>    j.JobLevelType, 
+</span></span><span style="display:flex;"><span>    ed.NumReports
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeDetails ed
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> JobLevel j <span style="color:#66d9ef">ON</span> ed.joblevelid <span style="color:#f92672">=</span> j.joblevelid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> ed.NumReports <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">AND</span> j.JobLevelType <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">IN</span> (<span style="color:#e6db74">&#39;Senior&#39;</span>, <span style="color:#e6db74">&#39;Lead&#39;</span>);
+</span></span></code></pre></div><p><img src="/images/projects/employees_eligible_for_promotion_based_on_responsibilities.png" alt="Identifying Employees Deserving Promotion"></p>
+<ul>
+<li>Organizations could consider assigning more responsibilities such as reporting tasks to employees to identify and prepare them for promotions.</li>
+</ul>
+<p><strong>5. Stress Triggers by Department</strong> - This query examines whether workload, commute distance, or lack of physical activity is a major cause of stress in certain departments.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> d.DeptName, 
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#66d9ef">AVG</span>(es.Workload),<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">AS</span> AvgWorkload, 
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#66d9ef">AVG</span>(es.Stress),<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">AS</span> AvgStress,
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#66d9ef">AVG</span>(<span style="color:#66d9ef">c</span>.CommuteDistance),<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">AS</span> AvgCommuteDistance,
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#66d9ef">AVG</span>(es.PhysicalActivities),<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">AS</span> AvgPhysicalActivity
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeSurvey es
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> EmployeeDetails ed <span style="color:#66d9ef">ON</span> ed.employeesurveyid <span style="color:#f92672">=</span> es.employeesurveyid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> Department d <span style="color:#66d9ef">ON</span> d.deptid <span style="color:#f92672">=</span> ed.deptid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> Commute <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">c</span>.commuteid <span style="color:#f92672">=</span> ed.commuteid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> d.DeptName;
+</span></span></code></pre></div><p><img src="/images/projects/stress_triggers_by_department.png" alt="Stress Triggers by Department"></p>
+<ul>
+<li>Employees in Marketing and Legal reported higher average workloads (3.10 and 3.01) and stress levels (1.75 and 1.78), likely due to demanding roles and longer commutes.</li>
+<li>HR and Customer Service employees reported lower stress levels (1.76 and 1.69) and workloads (2.79 and 2.86), suggesting better work-life balance in these departments.</li>
+<li>Departments with longer average commute distances (e.g., Legal at 14.30) tended to report slightly higher stress levels, highlighting the impact of commuting on employee well-being.</li>
+</ul>
+<p><strong>6. Sleep Patterns by Department</strong> - This query identifies the department where employees get the most sleep on average.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> d.DeptName, 
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#66d9ef">AVG</span>(es.SleepHours),<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">AS</span> AvgSleepHours
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeSurvey es
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> EmployeeDetails ed <span style="color:#66d9ef">ON</span> es.employeesurveyid <span style="color:#f92672">=</span> ed.employeesurveyid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> Department d <span style="color:#66d9ef">ON</span> ed.deptid <span style="color:#f92672">=</span> d.deptid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> d.DeptName
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> AvgSleepHours <span style="color:#66d9ef">DESC</span>;
+</span></span></code></pre></div><p><img src="/images/projects/average_sleep_by_department.png" alt="Sleep Patters by Department"></p>
+<ul>
+<li>Employees in the IT department reported the highest average sleep hours (7.09), suggesting better work-life balance or flexible schedules.</li>
+<li>HR employees had the lowest average sleep hours (6.88), possibly due to higher stress or demanding roles despite lower workloads.</li>
+<li>Most departments reported similar sleep patterns (around 7 hours), indicating that sleep habits are relatively consistent across the organization.</li>
+</ul>
+<p><strong>7. Older Employees in Lower Job Levels</strong> - This query examines whether older employees are stuck in lower job levels.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> ed.Age, 
+</span></span><span style="display:flex;"><span>    j.JobLevelType, 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> EmployeeCount
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeDetails ed
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> Joblevel j <span style="color:#66d9ef">ON</span> ed.joblevelid <span style="color:#f92672">=</span> j.joblevelid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> ed.Age, j.jobleveltype
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">HAVING</span> j.JobLevelType <span style="color:#66d9ef">IN</span> (<span style="color:#e6db74">&#39;Junior&#39;</span>, <span style="color:#e6db74">&#39;Intern/Fresher&#39;</span>) <span style="color:#66d9ef">AND</span> Age <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">28</span>;
+</span></span></code></pre></div><p><img src="/images/projects/age_and_job_level_analysis.png" alt="Older Employees in Lower Job Levels"></p>
+<ul>
+<li>Only one employee aged 29 is in a Junior-level role, suggesting potential challenges in career progression for older employees.
+<strong>8. Creating Employee Personas</strong> - This query creates personas based on unique clusters of employee attributes.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CASE</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> <span style="color:#66d9ef">c</span>.CommuteDistance <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">AND</span> es.WLB <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">AND</span> es.Stress <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">AND</span> es.SleepHours <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">7</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Exhausted Commuter&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> <span style="color:#66d9ef">c</span>.CommuteDistance <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">AND</span> es.WLB <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">AND</span> es.Stress <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Balanced Achiever&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> es.Workload <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">AND</span> es.Stress <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">AND</span> es.JobSatisfaction <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Stressed Overachiever&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">ELSE</span> <span style="color:#e6db74">&#39;Other&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">AS</span> Persona,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> TotalEmployees
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeSurvey es
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> EmployeeDetails ed <span style="color:#66d9ef">ON</span> ed.employeesurveyid <span style="color:#f92672">=</span> es.employeesurveyid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> Commute <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">c</span>.commuteid <span style="color:#f92672">=</span> ed.commuteid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CASE</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> <span style="color:#66d9ef">c</span>.CommuteDistance <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">AND</span> es.WLB <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">AND</span> es.Stress <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">AND</span> es.SleepHours <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">7</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Exhausted Commuter&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> <span style="color:#66d9ef">c</span>.CommuteDistance <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">AND</span> es.WLB <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">AND</span> es.Stress <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Balanced Achiever&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">WHEN</span> es.Workload <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">AND</span> es.Stress <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">AND</span> es.JobSatisfaction <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Stressed Overachiever&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">ELSE</span> <span style="color:#e6db74">&#39;Other&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">END</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> TotalEmployees <span style="color:#66d9ef">DESC</span>;
+</span></span></code></pre></div><p><img src="/images/projects/employee_personas_based_on_attributes.png" alt="Creating Employee Personas"></p>
+<ul>
+<li>The Balanced Achiever persona (459 employees) represents employees with good work-life balance and low stress, indicating a healthy work environment for many.</li>
+<li>The Exhausted Commuter persona (24 employees) highlights a small group struggling with long commutes, high stress, and poor work-life balance.</li>
+<li>The Stressed Overachiever persona (5 employees) is the smallest group, representing employees with high workloads, stress, and satisfaction, suggesting they thrive under pressure but are at risk of burnout.</li>
+</ul>
+<p><strong>9. Employees with the Most Extreme Work-Life Imbalance</strong> - This query identifies employees with extreme work-life imbalances, focusing on high stress, long commutes, and poor sleep.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span>    ed.EmpID,
+</span></span><span style="display:flex;"><span>    j.JobLevelType,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">c</span>.CommuteDistance,
+</span></span><span style="display:flex;"><span>    es.Workload,
+</span></span><span style="display:flex;"><span>    es.Stress,
+</span></span><span style="display:flex;"><span>    es.WLB,
+</span></span><span style="display:flex;"><span>    es.SleepHours
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeSurvey es
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> EmployeeDetails ed <span style="color:#66d9ef">ON</span> ed.employeesurveyid <span style="color:#f92672">=</span> es.employeesurveyid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> Commute <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ON</span> ed.commuteid <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>.commuteid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> JobLevel j  <span style="color:#66d9ef">ON</span> j.joblevelid <span style="color:#f92672">=</span> ed.joblevelid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> (es.Stress <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">5</span> <span style="color:#66d9ef">OR</span> es.Workload <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span>) 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">AND</span> es.WLB <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">AND</span> es.SleepHours <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">AND</span> <span style="color:#66d9ef">c</span>.CommuteDistance <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> es.Stress <span style="color:#66d9ef">DESC</span>, es.WLB <span style="color:#66d9ef">ASC</span>;
+</span></span></code></pre></div><p><img src="/images/projects/employees_with_extreme_work_life_imbalance.png" alt="Employees with the most extreme work-life imbalance"></p>
+<ul>
+<li>Employees with extreme work-life imbalances often face high stress levels (3-4) and long commutes (over 15 miles), exacerbating their challenges.</li>
+<li>Junior employees and Interns/Freshers are prominently represented, suggesting that early-career roles may lack support for work-life balance.</li>
+<li>Most employees in this group report low sleep hours (below 6 hours) and poor work-life balance (WLB ≤ 3), indicating a need for better wellness initiatives.</li>
+</ul>
+<p><strong>10. Workload and Satisfaction by Job Levels and Departments</strong> - This query explores the relationship between workload and job satisfaction across different job levels and departments.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span>    d.DeptName,
+</span></span><span style="display:flex;"><span>    j.JobLevelType,
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#66d9ef">AVG</span>(es.Workload),<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">AS</span> AvgWorkload,
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#66d9ef">AVG</span>(es.JobSatisfaction),<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">AS</span> AvgJobSatisfaction,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> TotalEmployees
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> EmployeeSurvey es
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> EmployeeDetails ed <span style="color:#66d9ef">ON</span> es.employeesurveyid <span style="color:#f92672">=</span> ed.employeesurveyid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> Department d <span style="color:#66d9ef">ON</span> ed.deptid <span style="color:#f92672">=</span> d.deptid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> JobLevel j <span style="color:#66d9ef">ON</span> j.joblevelid <span style="color:#f92672">=</span> ed.joblevelid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> d.DeptName, j.JobLevelType
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">AVG</span>(es.Workload) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">AND</span> <span style="color:#66d9ef">AVG</span>(es.JobSatisfaction) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> AvgJobSatisfaction <span style="color:#66d9ef">DESC</span>, AvgWorkload <span style="color:#66d9ef">ASC</span>;
+</span></span></code></pre></div><p><img src="/images/projects/workload_and_satisfaction_by_job_levels_and_departments.png" alt="Workload and Satisfaction by Job Levels and Department"></p>
+<ul>
+<li>Senior-level employees in departments like Marketing, Finance, and Legal report higher job satisfaction (3.47–3.52) despite moderate workloads, suggesting they find their roles rewarding.</li>
+<li>Interns/Freshers and Junior employees in IT and Finance report lower satisfaction (3.18–3.35) despite similar workloads, indicating potential struggles with role adaptation or support.</li>
+<li>Marketing Leads report the highest average workload (3.42) but relatively lower satisfaction (3.21), highlighting potential burnout risks in leadership roles.</li>
+</ul>
+<h3 id="step-4-insights-visualization">Step 4: Insights Visualization</h3>
+<p>To further enhance the analysis and present the results in a more understandable format, I used Tableau for data visualization of few queries. The visualizations provided a clear way to convey the insights derived from the SQL queries, making it easier to spot trends and patterns.</p>
+<p><img src="/images/projects/employee_survey_analysis_dashboard.png" alt="Insights Visualization"></p>
+<ul>
+<li>Some employees, especially in Finance and Customer Service, report high workload but still maintain decent job satisfaction, suggesting other factors influence satisfaction..</li>
+<li>Mid-level and lead roles tend to experience the highest workload, while interns and juniors have relatively lower but varying job satisfaction across departments.</li>
+<li>HR and Operations employees get the least sleep (~6.88-6.92 hours), potentially indicating higher stress or poor work-life balance, while IT employees get the most (~7.09 hours).</li>
+<li>Workload and job satisfaction patterns differ significantly across Sales, Marketing, and IT, hinting at department-specific challenges in workload distribution and engagement.</li>
+</ul>
+<h2 id="key-learnings--takeaway">Key Learnings &amp; Takeaway</h2>
+<ul>
+<li>This project reinforced the importance of using data to uncover actionable insights, such as identifying stress triggers, workload imbalances, and opportunities for employee growth.</li>
+<li>The analysis highlighted the impact of workload, commute, and sleep on employee well-being, emphasizing the need for organizations to prioritize work-life balance.</li>
+<li>Working with SQL, Tableau, and large datasets taught me the value of adaptability and continuous learning in solving real-world problems.</li>
+</ul>
+
+    </div>
+  </article>
+</div>
+
+  
+<script type="text/javascript" src="/main.js" defer></script>
+
+
+</body>
+
+</html>
