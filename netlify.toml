@@ -6,7 +6,8 @@ command = "npm install && npm run build"
 HUGO_VERSION = "0.121.1"
 NODE_VERSION = "20.11.1"
 GO_VERSION = "1.21.6"
-
-[context.production.environment]
-HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
+HUGO_ENV = "production"
+
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
