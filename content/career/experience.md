@@ -4,6 +4,9 @@ date: 2025-03-14
 draft: false
 ---
 
+### Finance Analyst
+**Chicago Transit Authority** | *June 2025 - March 2026*
+
 ### SEO Analyst
 **Zedex Info Pvt Ltd** | *January 2023 - December 2023*
 
